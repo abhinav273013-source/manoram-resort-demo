@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manoram Resort | Celebrations & Weddings</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #10100e;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --gold: #d5b16a;
+  --dark: #10100e;
+  --muted: #b9b4aa;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  background: #111;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #302819;
+}
+
+.logo {
+  color: var(--gold);
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 13px;
+}
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
+  background:
+    linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.78)),
+    url("https://images.unsplash.com/photo-1519167754551-83f550bb49b3?auto=format&fit=crop&w=1800&q=85");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.tag {
+  color: var(--gold);
+  letter-spacing: 5px;
+  font-size: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 8vw, 85px);
+  margin: 22px 0;
+  font-family: Georgia, serif;
+  font-weight: normal;
+}
+
+.hero p {
+  color: #e0ddd7;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #15120c;
+  padding: 14px 27px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.btn-outline {
+  border: 1px solid var(--gold);
+  color: white;
+  background: transparent;
+}
+
+section {
+  padding: 75px 7%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title span {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+.section-title h2 {
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: normal;
+  margin-top: 12px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.about-text h2 {
+  font-family: Georgia, serif;
+  font-size: 38px;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+.services {
+  background: #171613;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: #201e19;
+  border: 1px solid #393123;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+}
+
+.card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 22px;
+}
+
+.card h3 {
+  color: var(--gold);
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.booking {
+  text-align: center;
+  background:
+    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1600&q=85");
+  background-size: cover;
+  background-position: center;
+}
+
+.booking h2 {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.booking p {
+  color: #ddd;
+  margin-bottom: 25px;
+  line-height: 1.8;
+}
+
+.contact {
+  background: #171613;
+  text-align: center;
+}
+
+.contact p {
+  color: var(--muted);
+  line-height: 2;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #0a0a09;
+  color: #999;
+  font-size: 13px;
+}
+
+footer span {
+  color: var(--gold);
+}
+
+@media(max-width: 800px) {
+  nav {
+    padding: 16px 5%;
+  }
+
+  nav a {
+    margin-left: 9px;
+    font-size: 11px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-grid img {
+    height: 160px;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">MANORAM RESORT</div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="tag">CELEBRATE YOUR MOMENTS</span>
+
+    <h1>Make Memories<br>That Last Forever</h1>
+
+    <p>
+      A beautiful destination for weddings,
+      celebrations and unforgettable moments.
+    </p>
+
+    <a href="#contact" class="btn">ENQUIRE NOW</a>
+
+    <a href="#gallery" class="btn btn-outline">
+      EXPLORE
+    </a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <img
+      src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85"
+      alt="Wedding celebration"
+    >
+
+    <div class="about-text">
+      <span class="tag">WELCOME TO MANORAM</span>
+
+      <h2>Your Dream Celebration Begins Here</h2>
+
+      <p>
+        Celebrate life's most beautiful moments
+        in a special setting. From weddings and
+        receptions to family gatherings,
+        make every occasion memorable.
+      </p>
+
+      <p>
+        Discover a place where celebrations,
+        happiness and unforgettable memories
+        come together.
+      </p>
+
+      <a href="#services" class="btn">DISCOVER MORE</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+
+  <div class="section-title">
+    <span>WHAT WE OFFER</span>
+    <h2>Our Services</h2>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1519167754551-83f550bb49b3?auto=format&fit=crop&w=900&q=85"
+        alt="Wedding venue"
+      >
+      <div class="card-content">
+        <h3>Wedding Celebrations</h3>
+        <p>
+          Celebrate your special day with
+          unforgettable memories and beautiful moments.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=85"
+        alt="Event decoration"
+      >
+      <div class="card-content">
+        <h3>Events & Parties</h3>
+        <p>
+          A special place for birthdays,
+          anniversaries and family celebrations.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1507504031003-b417219a0aff?auto=format&fit=crop&w=900&q=85"
+        alt="Wedding dining"
+      >
+      <div class="card-content">
+        <h3>Dining & Catering</h3>
+        <p>
+          Make your celebrations even more special
+          with memorable dining experiences.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="gallery">
+
+  <div class="section-title">
+    <span>OUR MOMENTS</span>
+    <h2>Photo Gallery</h2>
+  </div>
+
+  <div class="gallery-grid">
+
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=85" alt="Wedding">
+    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=700&q=85" alt="Celebration">
+    <img src="https://images.unsplash.com/photo-1519167754551-83f550bb49b3?auto=format&fit=crop&w=700&q=85" alt="Venue">
+    <img src="https://images.unsplash.com/photo-1507504031003-b417219a0aff?auto=format&fit=crop&w=700&q=85" alt="Dining">
+    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=700&q=85" alt="Event">
+    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=85" alt="Wedding decorations">
+
+  </div>
+</section>
+
+<section class="booking">
+
+  <h2>Plan Your Special Day</h2>
+
+  <p>
+    Let us be a part of your beautiful celebrations.
+    Contact us to enquire about your event.
+  </p>
+
+  <a
+    href="https://wa.me/?text=Hello%20Manoram%20Resort%2C%20I%20want%20to%20enquire%20about%20booking."
+    class="btn"
+    target="_blank"
+  >
+    BOOKING ENQUIRY
+  </a>
+
+</section>
+
+<section class="contact" id="contact">
+
+  <div class="section-title">
+    <span>GET IN TOUCH</span>
+    <h2>Contact Us</h2>
+  </div>
+
+  <p>MANORAM RESORT</p>
+  <p>Location: Address to be added</p>
+  <p>Phone: Contact number to be added</p>
+
+  <a
+    href="https://wa.me/?text=Hello%20Manoram%20Resort"
+    class="btn"
+    target="_blank"
+  >
+    CONTACT ON WHATSAPP
+  </a>
+
+</section>
+
+<footer>
+  © 2026 MANORAM RESORT | Website Demo by
+  <span>DigitalCraft Studio</span>
+</footer>
+
+</body>
+</html>
